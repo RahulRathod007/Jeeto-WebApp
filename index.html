@@ -348,13 +348,13 @@
       transform: scale(1.2);
     }
     .footer {
-      background: linear-gradient(90deg, #443631, #ff8c00, #5e5a3f);
-      color: #fff;
+      background: linear-gradient(135deg, #1e3a8a, #0e1b4d, #0d0d0d);
+      color: #e0e7ff;
       padding: 60px 0;
       text-align: center;
-      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 -5px 15px rgba(0, 112, 255, 0.3);
     }
     .footer::before {
       content: '';
@@ -363,8 +363,8 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
+      background: radial-gradient(circle, rgba(0, 148, 255, 0.2) 0%, transparent 70%);
+      animation: rotate 15s linear infinite;
       z-index: 0;
     }
     .footer::after {
@@ -374,7 +374,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(255, 69, 0, 0.2), rgba(255, 215, 0, 0.2));
+      background: linear-gradient(135deg, rgba(0, 68, 255, 0.1), rgba(0, 255, 234, 0.1));
       z-index: 1;
     }
     .footer .container {
@@ -386,11 +386,11 @@
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 30px;
-      background: linear-gradient(45deg, #fff, #ffea00);
+      background: linear-gradient(45deg, #00b4ff, #e0e7ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(255, 234, 0, 0.7);
-      animation: pulse 2s infinite alternate;
+      text-shadow: 0 0 10px rgba(0, 180, 255, 0.7);
+      animation: pulseGlow 2s infinite alternate;
     }
     .footer p {
       font-size: 1.1rem;
@@ -398,14 +398,15 @@
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      color: #a3bffa;
     }
     .footer .nav-links {
       margin-bottom: 25px;
     }
     .footer .nav-links a {
-      color: #fff;
+      color: #a3bffa;
       text-decoration: none;
-      margin: 0 25px;
+      margin: 0 20px;
       font-size: 1.2rem;
       font-weight: 600;
       transition: all 0.3s ease;
@@ -418,31 +419,32 @@
       height: 2px;
       bottom: -5px;
       left: 0;
-      background: #ffea00;
+      background: #00d4ff;
       transition: width 0.3s ease;
     }
     .footer .nav-links a:hover::after {
       width: 100%;
     }
     .footer .nav-links a:hover {
-      color: #0d0d0d;
-      text-shadow: 0 0 20px rgba(255, 234, 0, 0.8);
+      color: #00d4ff;
+      text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
     }
     .footer .social-icons a {
       font-size: 2rem;
       margin: 0 20px;
       transition: transform 0.3s ease, color 0.3s ease;
-      color: #fff;
+      color: #e0e7ff;
     }
     .footer .social-icons a:hover {
       transform: scale(1.4);
-      color: #ffea00;
-      text-shadow: 0 0 15px rgba(255, 234, 0, 0.9);
+      color: #00b4ff;
+      text-shadow: 0 0 20px rgba(0, 180, 255, 0.8);
     }
     .footer .copyright {
       font-size: 1rem;
       margin-top: 20px;
       opacity: 0.9;
+      color: #a3bffa;
     }
     /* Popup Styles */
     .popup-overlay {
@@ -468,6 +470,10 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       position: relative;
       animation: zoomIn 0.5s ease-out;
+    }
+    .popup-card .logo {
+      max-width: 150px;
+      margin-bottom: 20px;
     }
     .popup-card .close-btn {
       position: absolute;
@@ -527,9 +533,9 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-    @keyframes pulse {
-      from { transform: scale(1); }
-      to { transform: scale(1.05); }
+    @keyframes pulseGlow {
+      from { transform: scale(1); text-shadow: 0 0 5px rgba(0, 180, 255, 0.5); }
+      to { transform: scale(1.05); text-shadow: 0 0 15px rgba(0, 180, 255, 0.9); }
     }
     /* Responsive Adjustments */
     @media (max-width: 768px) {
@@ -610,6 +616,15 @@
       .popup-card h3 {
         font-size: 1.8rem;
       }
+      .popup-card .logo {
+        max-width: 120px;
+      }
+      .install-section .install-steps {
+        padding: 0 15px;
+      }
+      .install-step {
+        max-width: 100%;
+      }
     }
     @media (max-width: 576px) {
       .hero-content h1, .install-section .title {
@@ -633,6 +648,9 @@
       }
       .install-step h4 {
         font-size: 1.2rem;
+      }
+      .install-step p {
+        font-size: 0.9rem;
       }
       .platform-links .btn {
         font-size: 1rem;
@@ -674,6 +692,21 @@
         font-size: 0.9rem;
         padding: 10px 20px;
       }
+      .popup-card .logo {
+        max-width: 100px;
+      }
+      .install-section .install-steps {
+        padding: 0 10px;
+      }
+      .install-step img {
+        width: 120px;
+      }
+      .install-step h4 {
+        font-size: 1.1rem;
+      }
+      .install-step p {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -682,6 +715,7 @@
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-card">
       <i class="fas fa-times close-btn" id="closePopup"></i>
+      <img src="./assets/logo.jpeg" alt="JEETO Logo" class="logo">
       <h3>Welcome to JEETO!</h3>
       <p>Join the ultimate gaming revolution with JEETO! Dive into action-packed games, compete globally, and win massive rewards. Download the JEETO app now and start your gaming journey!</p>
       <a href="./assets/JEETO.apk" class="btn btn-primary btn-download" download>Download Now</a>
@@ -691,7 +725,9 @@
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">JEETO</a>
+      <a class="navbar-brand" href="#">
+        <img src="./assets/logo.jpeg" alt="JEETO Logo" style="height: 55px; vertical-align: middle; border-radius: 15%;">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -745,7 +781,7 @@
       <div id="gameCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./assets/crash.jpeg" class="d-block w-100" alt="Crash">
+            <img src="https://images.wallpapersden.com/image/download/crash-bandicoot-its-about-time-hd-gaming_bWdqZmiUmZqaraWkpJRoZWVlrWZrbmc.jpg" class="d-block w-100" alt="Crash">
             <div class="carousel-caption">
               <h5>Crash</h5>
               <p>Test your timing and win big in this thrilling game!</p>
@@ -753,7 +789,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/3Patti.jpeg" class="d-block w-100" alt="Teen Patti">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/9/342018413/QE/WG/AL/196191182/photo-1607252650355-f7fd0460ccdb.jpg" class="d-block w-100" alt="Teen Patti">
             <div class="carousel-caption">
               <h5>Teen Patti</h5>
               <p>Play the classic Indian card game and outsmart your opponents!</p>
@@ -761,7 +797,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/andar-bahar.jpeg" class="d-block w-100" alt="Andar Bahar">
+            <img src="https://www.mobzway.com/blog/wp-content/uploads/cost-to-Develop-an-Andar-Bahar.jpg" class="d-block w-100" alt="Andar Bahar">
             <div class="carousel-caption">
               <h5>Andar Bahar</h5>
               <p>Bet and win in this fast-paced Indian card game!</p>
@@ -769,7 +805,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/bingo.jpeg" class="d-block w-100" alt="Bingo">
+            <img src="https://media.istockphoto.com/id/1487068767/vector/bingo-lottery-balls-and-tickets-background.jpg?s=612x612&w=0&k=20&c=teWqm9arf4w-iOwClpjwj1tfj28IhmsVI8yQxK3vkeQ=" class="d-block w-100" alt="Bingo">
             <div class="carousel-caption">
               <h5>Bingo</h5>
               <p>Mark your numbers and shout Bingo to claim your prize!</p>
@@ -798,7 +834,7 @@
       <div class="row">
         <div class="col-md-4 col-sm-6 mb-4">
           <div class="card game-card">
-            <img src="./assets/crash.jpeg" alt="Crash">
+            <img src="https://images.wallpapersden.com/image/download/crash-bandicoot-its-about-time-hd-gaming_bWdqZmiUmZqaraWkpJRoZWVlrWZrbmc.jpg" alt="Crash">
             <div class="card-body">
               <h5 class="card-title">Crash</h5>
               <p class="card-text">Test your timing and win big in this thrilling game!</p>
@@ -828,7 +864,7 @@
         </div>
         <div class="col-md-4 col-sm-6 mb-4">
           <div class="card game-card">
-            <img src="./assets/bingo.jpeg" alt="Bingo">
+            <img src="https://media.istockphoto.com/id/1487068767/vector/bingo-lottery-balls-and-tickets-background.jpg?s=612x612&w=0&k=20&c=teWqm9arf4w-iOwClpjwj1tfj28IhmsVI8yQxK3vkeQ=" alt="Bingo">
             <div class="card-body">
               <h5 class="card-title">Bingo</h5>
               <p class="card-text">Mark your numbers and shout Bingo to claim your prize!</p>
@@ -847,14 +883,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <p>JEETO is your ultimate gaming destination, bringing together thrilling games, exciting tournaments, and massive rewards. Our mission is to create a vibrant gaming community where players of all levels can compete, connect, and have fun. With cutting-edge technology and a passion for gaming, we aim to deliver an unparalleled experience that keeps you coming back for more.</p>
     </div>
   </section>
 
@@ -918,26 +946,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <p>Get in touch with our dedicated support team for assistance or inquiries.</p>
-      <div class="contact-info" style="text-align: center; padding: 40px; background: linear-gradient(135deg, #25254b, #1a1a2e); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
-        <h4>Contact Information</h4>
-        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:support@jeeto.com">support@jeeto.com</a></p>
-        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+911234567890">+91 123 456 7890</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Gaming Lane, Tech City, India</p>
-        <div class="social-icons mt-3">
-          <a href="https://facebook.com/jeeto"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/jeeto"><i class="fab fa-twitter"></i></a>
-          <a href="https://instagram.com/jeeto"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/jeeto"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Install Section -->
   <section id="install" class="install-section">
     <video class="install-video" autoplay muted loop>
@@ -963,6 +971,34 @@
       </div>
       <div class="platform-links">
         <a href="./assets/JEETO.apk" class="btn btn-primary" download>Download for Android</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p>JEETO is your ultimate gaming destination, bringing together thrilling games, exciting tournaments, and massive rewards. Our mission is to create a vibrant gaming community where players of all levels can compete, connect, and have fun. With cutting-edge technology and a passion for gaming, we aim to deliver an unparalleled experience that keeps you coming back for more.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p>Get in touch with our dedicated support team for assistance or inquiries.</p>
+      <div class="contact-info" style="text-align: center; padding: 40px; background: linear-gradient(135deg, #25254b, #1a1a2e); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
+        <h4>Contact Information</h4>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:support@jeeto.com">support@jeeto.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+911234567890">+91 123 456 7890</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Gaming Lane, Tech City, India</p>
+        <div class="social-icons mt-3">
+          <a href="https://facebook.com/jeeto"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/jeeto"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/jeeto"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/jeeto"><i class="fab fa-youtube"></i></a>
+        </div>
       </div>
     </div>
   </section>
