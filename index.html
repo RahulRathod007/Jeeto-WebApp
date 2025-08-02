@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JEETO is your ultimate gaming hub with action-packed games, global tournaments, and massive rewards. Download now and join the revolution!">
+  <meta name="keywords" content="gaming, JEETO, online games, tournaments, rewards">
+  <meta name="author" content="JEETO Team">
   <title>JEETO - Epic Gaming Hub</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +31,7 @@
       z-index: 1000;
     }
     .navbar-brand {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 5vw, 2.2rem);
       font-weight: 800;
       color: #fff !important;
       text-transform: uppercase;
@@ -38,7 +41,7 @@
     .nav-link {
       color: #fff !important;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       margin: 0 15px;
       transition: all 0.3s ease;
       position: relative;
@@ -68,7 +71,9 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      padding-top: 80px; /* Adjust for fixed navbar */
+      padding-top: 80px;
+      background-size: cover;
+      background-position: center;
     }
     .hero-video, .install-video {
       position: absolute;
@@ -77,6 +82,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
       z-index: -1;
     }
     .hero-overlay, .install-overlay {
@@ -93,7 +99,7 @@
       z-index: 1;
     }
     .hero-content h1 {
-      font-size: 5rem;
+      font-size: clamp(2.5rem, 8vw, 5rem);
       font-weight: 800;
       text-transform: uppercase;
       background: linear-gradient(45deg, #ff007a, #00d4ff);
@@ -103,13 +109,13 @@
       animation: zoomIn 1.5s ease-out;
     }
     .hero-content p {
-      font-size: 1.6rem;
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
       margin: 20px 0 40px;
       animation: fadeInUp 1.5s ease-out 0.3s;
       animation-fill-mode: backwards;
     }
     .hero-content .btn {
-      font-size: 1.3rem;
+      font-size: clamp(1rem, 3vw, 1.3rem);
       padding: 15px 50px;
       border-radius: 50px;
       background: #ff007a;
@@ -125,7 +131,7 @@
       transform: scale(1.1);
     }
     .install-section .title {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 40px;
@@ -137,42 +143,56 @@
     .install-steps {
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: clamp(20px, 5vw, 40px);
       margin-bottom: 40px;
+      flex-wrap: wrap;
+      padding: 0 clamp(10px, 3vw, 20px);
     }
     .install-step {
       text-align: center;
       max-width: 300px;
-    }
-    .install-step img {
-      width: 250px;
-      height: auto;
+      width: 100%;
+      background: linear-gradient(135deg, #25254b, #1a1a2e);
       border-radius: 15px;
+      padding: 20px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease;
     }
-    .install-step:hover img {
-      transform: scale(1.05);
+    .install-step:hover {
+      transform: translateY(-10px);
+    }
+    .install-step img {
+      width: 100%;
+      max-width: clamp(100px, 25vw, 200px);
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      object-fit: cover;
+      aspect-ratio: 1/1;
     }
     .install-step h4 {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
       font-weight: 600;
       color: #ffea00;
-      margin: 15px 0 10px;
+      margin: 10px 0;
     }
     .install-step p {
-      font-size: 1rem;
-      color: #d1d1d1;
-      line-height: 1.5;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: #e0e7ff;
+      line-height: 1.6;
     }
     .platform-links {
       margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
     .platform-links .btn {
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
       padding: 12px 30px;
       border-radius: 50px;
-      margin: 0 10px;
       background: linear-gradient(45deg, #ff007a, #00d4ff);
       border: none;
       box-shadow: 0 0 15px rgba(255, 0, 122, 0.5);
@@ -184,11 +204,11 @@
       transform: scale(1.05);
     }
     .games-section, .about-section, .services-section, .how-to-play-section, .contact-section {
-      padding: 120px 0;
+      padding: clamp(60px, 10vw, 120px) 0;
       background: linear-gradient(180deg, #1a1a2e, #16213e);
     }
     .section-title {
-      font-size: 3.5rem;
+      font-size: clamp(2rem, 6vw, 3.5rem);
       font-weight: 700;
       text-align: center;
       margin-bottom: 60px;
@@ -198,8 +218,10 @@
       animation: fadeIn 1.5s ease-out;
     }
     .carousel-inner img {
-      height: 650px;
-      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: 650px;
+      object-fit: cover;
       border-radius: 25px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       transition: transform 0.5s ease;
@@ -215,13 +237,13 @@
       animation: fadeInUp 1s ease-out;
     }
     .carousel-caption h5 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 700;
       color: #ffea00;
       text-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
     }
     .carousel-caption p {
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
       color: #fff;
     }
     .carousel-control-prev, .carousel-control-next {
@@ -241,14 +263,17 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       animation: fadeInUp 1.5s ease-out;
+      width: 100%;
     }
     .game-card:hover {
       transform: translateY(-20px);
       box-shadow: 0 12px 40px rgba(255, 0, 122, 0.4);
     }
     .game-card img {
-      height: 280px;
-      object-fit: fit;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
       transition: transform 0.4s ease;
     }
     .game-card:hover img {
@@ -259,12 +284,13 @@
       text-align: center;
     }
     .game-card .card-title {
-      font-size: 1.7rem;
+      font-size: clamp(1.4rem, 4vw, 1.7rem);
       font-weight: 700;
       color: #ffea00;
     }
     .game-card .card-text {
       color: #d1d1d1;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
     }
     .game-card .btn {
       background: linear-gradient(45deg, #ff007a, #00d4ff);
@@ -272,7 +298,7 @@
       border-radius: 50px;
       padding: 12px 30px;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       box-shadow: 0 0 15px rgba(255, 0, 122, 0.5);
       transition: all 0.3s ease;
     }
@@ -282,7 +308,7 @@
       transform: scale(1.05);
     }
     .about-section p, .services-section p, .how-to-play-section p, .contact-section p {
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
       color: #d1d1d1;
       text-align: center;
       max-width: 800px;
@@ -297,18 +323,19 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       animation: fadeInUp 1.5s ease-out;
+      width: 100%;
     }
     .service-card:hover, .how-to-play-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 12px 40px rgba(255, 0, 122, 0.4);
     }
     .service-card i, .how-to-play-card i {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.5rem);
       color: #ffea00;
       margin-bottom: 20px;
     }
     .service-card h5, .how-to-play-card h5 {
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
       font-weight: 600;
       color: #ffea00;
     }
@@ -322,13 +349,13 @@
       text-align: left;
     }
     .contact-info h4 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 700;
       color: #ffea00;
       margin-bottom: 20px;
     }
     .contact-info p {
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       margin-bottom: 15px;
     }
     .contact-info a {
@@ -340,7 +367,7 @@
       color: #ff007a;
     }
     .contact-info .social-icons a {
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       margin-right: 15px;
       transition: transform 0.3s ease;
     }
@@ -350,7 +377,7 @@
     .footer {
       background: linear-gradient(135deg, #1e3a8a, #0e1b4d, #0d0d0d);
       color: #e0e7ff;
-      padding: 60px 0;
+      padding: clamp(40px, 8vw, 60px) 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -382,7 +409,7 @@
       z-index: 2;
     }
     .footer h3 {
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 800;
       text-transform: uppercase;
       margin-bottom: 30px;
@@ -393,7 +420,7 @@
       animation: pulseGlow 2s infinite alternate;
     }
     .footer p {
-      font-size: 1.1rem;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
       margin-bottom: 25px;
       max-width: 800px;
       margin-left: auto;
@@ -407,7 +434,7 @@
       color: #a3bffa;
       text-decoration: none;
       margin: 0 20px;
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
       font-weight: 600;
       transition: all 0.3s ease;
       position: relative;
@@ -430,7 +457,7 @@
       text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
     }
     .footer .social-icons a {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       margin: 0 20px;
       transition: transform 0.3s ease, color 0.3s ease;
       color: #e0e7ff;
@@ -441,7 +468,7 @@
       text-shadow: 0 0 20px rgba(0, 180, 255, 0.8);
     }
     .footer .copyright {
-      font-size: 1rem;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
       margin-top: 20px;
       opacity: 0.9;
       color: #a3bffa;
@@ -460,10 +487,13 @@
       align-items: center;
       animation: fadeIn 0.5s ease-out;
     }
+    .popup-overlay.fade-out {
+      animation: fadeOut 0.3s ease-out forwards;
+    }
     .popup-card {
       background: linear-gradient(135deg, #25254b, #1a1a2e);
       border-radius: 15px;
-      padding: 30px;
+      padding: clamp(20px, 5vw, 30px);
       max-width: 500px;
       width: 90%;
       text-align: center;
@@ -471,15 +501,18 @@
       position: relative;
       animation: zoomIn 0.5s ease-out;
     }
+    .popup-card.fade-out {
+      animation: zoomOut 0.3s ease-out forwards;
+    }
     .popup-card .logo {
-      max-width: 150px;
+      max-width: clamp(100px, 25vw, 150px);
       margin-bottom: 20px;
     }
     .popup-card .close-btn {
       position: absolute;
       top: 15px;
       right: 15px;
-      font-size: 1.5rem;
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
       color: #ffea00;
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -488,7 +521,7 @@
       transform: scale(1.2);
     }
     .popup-card h3 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 4vw, 2rem);
       font-weight: 700;
       background: linear-gradient(45deg, #ff007a, #00d4ff);
       -webkit-background-clip: text;
@@ -496,12 +529,30 @@
       margin-bottom: 20px;
     }
     .popup-card p {
-      font-size: 1.1rem;
+      font-size: clamp(0.8rem, 2.5vw, 1.1rem);
       color: #d1d1d1;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .popup-card ul {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .popup-card li {
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: #e0e7ff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .popup-card li i {
+      color: #ffea00;
+      margin-right: 10px;
     }
     .popup-card .btn-download {
-      font-size: 1.2rem;
+      font-size: clamp(0.9rem, 3vw, 1.2rem);
       padding: 12px 30px;
       border-radius: 50px;
       background: linear-gradient(45deg, #ff007a, #00d4ff);
@@ -521,13 +572,21 @@
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes zoomOut {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.8); }
     }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @keyframes rotate {
       from { transform: rotate(0deg); }
@@ -538,195 +597,245 @@
       to { transform: scale(1.05); text-shadow: 0 0 15px rgba(0, 180, 255, 0.9); }
     }
     /* Responsive Adjustments */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+      .hero-section, .install-section {
+        min-height: 80vh;
+      }
       .hero-content h1, .install-section .title {
-        font-size: 3rem;
+        font-size: clamp(2rem, 6vw, 3rem);
       }
       .hero-content p {
-        font-size: 1.2rem;
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
       }
       .hero-content .btn, .platform-links .btn, .popup-card .btn-download {
-        font-size: 1rem;
-        padding: 12px 30px;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        padding: 12px 25px;
       }
       .carousel-inner img {
-        height: 400px;
+        max-height: 500px;
       }
       .carousel-caption h5 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
       }
       .carousel-caption p {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
       .section-title {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
       }
       .game-card img {
-        height: 200px;
+        aspect-ratio: 16/9;
       }
       .game-card .card-title, .service-card h5, .how-to-play-card h5 {
-        font-size: 1.4rem;
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
       }
-      .game-card .card-text, .service-card p, .how-to-play-card p, .popup-card p {
-        font-size: 0.9rem;
+      .game-card .card-text, .service-card p, .how-to-play-card p, .popup-card p, .popup-card li {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
       }
-      .game-card .btn, .contact-form .btn {
-        font-size: 1rem;
+      .game-card .btn {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
         padding: 10px 20px;
       }
       .install-steps {
         flex-direction: column;
-        gap: 30px;
+        gap: 25px;
+        padding: 0 15px;
+      }
+      .install-step {
+        max-width: 100%;
+        padding: 15px;
       }
       .install-step img {
-        width: 200px;
+        max-width: clamp(80px, 20vw, 150px);
       }
       .install-step h4 {
-        font-size: 1.3rem;
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
       }
       .install-step p {
-        font-size: 0.9rem;
+        font-size: clamp(0.7rem, 2vw, 0.9rem);
       }
       .contact-info {
         padding: 20px;
       }
       .contact-info h4 {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
       }
       .contact-info p {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
       .footer h3 {
-        font-size: 2.2rem;
+        font-size: clamp(1.8rem, 4.5vw, 2.2rem);
       }
       .footer p {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
       .footer .nav-links a {
         margin: 0 15px;
-        font-size: 1.1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1.1rem);
       }
       .footer .social-icons a {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
         margin: 0 15px;
       }
       .popup-card {
         max-width: 400px;
       }
       .popup-card h3 {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 3.5vw, 1.8rem);
       }
       .popup-card .logo {
-        max-width: 120px;
-      }
-      .install-section .install-steps {
-        padding: 0 15px;
-      }
-      .install-step {
-        max-width: 100%;
+        max-width: clamp(80px, 20vw, 120px);
       }
     }
     @media (max-width: 576px) {
+      .hero-section, .install-section {
+        min-height: 70vh;
+        background-image: url('./assets/hero-poster.jpg'); /* Fallback for hero section */
+      }
+      .install-section {
+        background-image: url('./assets/install-poster.jpg'); /* Fallback for install section */
+      }
+      .hero-video, .install-video {
+        display: none; /* Hide videos on mobile */
+      }
       .hero-content h1, .install-section .title {
-        font-size: 2.2rem;
+        font-size: clamp(1.8rem, 5vw, 2.2rem);
       }
       .hero-content p {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
       .carousel-inner img {
-        height: 300px;
+        max-height: 300px;
       }
       .navbar-brand {
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
       }
       .nav-link {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
         margin: 0 10px;
       }
       .install-step img {
-        width: 150px;
+        max-width: clamp(70px, 18vw, 120px);
       }
       .install-step h4 {
-        font-size: 1.2rem;
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
       }
       .install-step p {
-        font-size: 0.9rem;
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
       }
       .platform-links .btn {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
         padding: 10px 20px;
         margin: 5px 0;
         display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
       }
       .contact-info {
         padding: 15px;
       }
       .contact-info h4 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
       }
       .footer h3 {
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 4vw, 1.8rem);
       }
       .footer p {
-        font-size: 0.9rem;
+        font-size: clamp(0.7rem, 2vw, 0.9rem);
       }
       .footer .nav-links a {
         display: block;
         margin: 10px 0;
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
       }
       .footer .social-icons a {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
         margin: 0 10px;
       }
       .popup-card {
         max-width: 300px;
       }
       .popup-card h3 {
-        font-size: 1.5rem;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
       }
-      .popup-card p {
-        font-size: 0.8rem;
+      .popup-card p, .popup-card li {
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
       }
       .popup-card .btn-download {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         padding: 10px 20px;
       }
       .popup-card .logo {
-        max-width: 100px;
+        max-width: clamp(70px, 18vw, 100px);
       }
-      .install-section .install-steps {
+      .install-steps {
         padding: 0 10px;
       }
+      .install-step {
+        padding: 10px;
+      }
       .install-step img {
-        width: 120px;
+        max-width: clamp(60px, 15vw, 100px);
+      }
+      .carousel-control-prev, .carousel-control-next {
+        width: 15%;
+      }
+    }
+    @media (max-width: 400px) {
+      .hero-content h1, .install-section .title {
+        font-size: clamp(1.5rem, 4.5vw, 1.8rem);
+      }
+      .carousel-inner img {
+        max-height: 250px;
+      }
+      .game-card img {
+        aspect-ratio: 4/3;
+      }
+      .install-step img {
+        max-width: clamp(50px, 12vw, 80px);
       }
       .install-step h4 {
-        font-size: 1.1rem;
+        font-size: clamp(0.8rem, 2vw, 1rem);
       }
       .install-step p {
-        font-size: 0.8rem;
+        font-size: clamp(0.6rem, 1.8vw, 0.7rem);
+      }
+      .install-section .title {
+        margin-bottom: 20px;
+      }
+      .install-steps {
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
   <!-- Popup Card -->
-  <div class="popup-overlay" id="popupOverlay">
+  <div class="popup-overlay" id="popupOverlay" role="dialog" aria-labelledby="popupTitle" aria-modal="true">
     <div class="popup-card">
-      <i class="fas fa-times close-btn" id="closePopup"></i>
+      <button class="close-btn" id="closePopup" aria-label="Close popup">
+        <i class="fas fa-times"></i>
+      </button>
       <img src="./assets/logo.jpeg" alt="JEETO Logo" class="logo">
-      <h3>Welcome to JEETO!</h3>
-      <p>Join the ultimate gaming revolution with JEETO! Dive into action-packed games, compete globally, and win massive rewards. Download the JEETO app now and start your gaming journey!</p>
-      <a href="./assets/JEETO.apk" class="btn btn-primary btn-download" download>Download Now</a>
+      <h3 id="popupTitle">Welcome to JEETO!</h3>
+      <p>Join the ultimate gaming revolution at <a href="https://www.jeeto.com" style="color: #00d4ff; text-decoration: underline;">www.jeeto.com</a>! Explore action-packed games, compete in global tournaments, and win massive rewards.</p>
+      <ul>
+        <li><i class="fas fa-gamepad"></i> 20+ thrilling games including Crash, Teen Patti, and Andar Bahar</li>
+        <li><i class="fas fa-trophy"></i> Daily and weekly tournaments with cash prizes</li>
+        <li><i class="fas fa-users"></i> Join a global community of millions of players</li>
+        <li><i class="fas fa-mobile-alt"></i> Available on Android (iOS coming soon!)</li>
+      </ul>
+      <p>Download the JEETO app now to start your gaming journey!</p>
+      <a href="./assets/JEETO.apk" class="btn btn-primary btn-download" download>Download for Android</a>
     </div>
   </div>
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="./assets/logo.jpeg" alt="JEETO Logo" style="height: 55px; vertical-align: middle; border-radius: 15%;">
+        <img src="./assets/logo.jpeg" alt="JEETO Logo" style="height: clamp(40px, 10vw, 55px); vertical-align: middle; border-radius: 15%;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -761,7 +870,7 @@
 
   <!-- Hero Section with Video Background -->
   <section id="home" class="hero-section">
-    <video class="hero-video" autoplay muted loop>
+    <video class="hero-video" autoplay muted loop playsinline poster="./assets/hero-poster.jpg">
       <source src="https://cdn.pixabay.com/video/2022/02/01/106316-672600359_large.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
@@ -781,106 +890,135 @@
       <div id="gameCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./assets/CrashNew.jpeg" class="d-block w-100" alt="Crash">
+            <img src="./assets/CrashNew.jpeg" class="d-block w-100" alt="Crash game screenshot" loading="lazy">
             <div class="carousel-caption">
               <h5>Crash</h5>
               <p>Test your timing and win big in this thrilling game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm">Play Now</a>
+              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm" download>Play Now</a>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/TeenPattiNew.jpeg" class="d-block w-100" alt="Teen Patti">
+            <img src="./assets/TeenPattiNew.jpeg" class="d-block w-100" alt="Teen Patti game screenshot" loading="lazy">
             <div class="carousel-caption">
               <h5>Teen Patti</h5>
               <p>Play the classic Indian card game and outsmart your opponents!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm">Play Now</a>
+              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm" download>Play Now</a>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/AnderBaharNew.jpeg" class="d-block w-100" alt="Andar Bahar">
+            <img src="./assets/AnderBaharNew.jpeg" class="d-block w-100" alt="Andar Bahar game screenshot" loading="lazy">
             <div class="carousel-caption">
               <h5>Andar Bahar</h5>
               <p>Bet and win in this fast-paced Indian card game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm">Play Now</a>
+              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm" download>Play Now</a>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/funtarget.jpeg" class="d-block w-100" alt="Bingo">
+            <img src="./assets/funtarget.jpeg" class="d-block w-100" alt="FunTarget game screenshot" loading="lazy">
             <div class="carousel-caption">
               <h5>FunTarget</h5>
               <p>Mark your numbers and shout FunTarget to claim your prize!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm">Play Now</a>
+              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm" download>Play Now</a>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="./assets/Pictorial.jpeg" class="d-block w-100" alt="Pictorial">
+            <img src="./assets/Pictorial.jpeg" class="d-block w-100" alt="Pictorial game screenshot" loading="lazy">
             <div class="carousel-caption">
               <h5>Pictorial</h5>
               <p>Experience high-speed action in this exciting game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm">Play Now</a>
+              <a href="./assets/JEETO.apk" class="btn btn-primary btn-sm" download>Play Now</a>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev" aria-label="Previous slide">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next" aria-label="Next slide">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
       
-      
       <!-- Game Cards -->
       <div class="row">
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="card game-card">
-            <img src="./assets/CrashNew.jpeg" alt="Crash">
+            <img src="./assets/CrashNew.jpeg" alt="Crash game screenshot" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Crash</h5>
-              <p class="card-text">Test your timing and win big in this thrilling game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary">Play Now</a>
+              <p class="card-text">Experience heart-pounding excitement in Crash, a high-stakes game where timing is everything. Watch the multiplier rise and cash out before it crashes!</p>
+              <ul class="card-text" style="text-align: left; list-style-type: none; padding: 0; margin: 10px 0;">
+                <li><strong>Features:</strong> Real-time multiplier, customizable bet sizes, auto cash-out option</li>
+                <li><strong>Difficulty:</strong> Medium - requires quick decision-making</li>
+                <li><strong>Modes:</strong> Solo, Multiplayer Tournaments</li>
+                <li><strong>Rewards:</strong> Daily leaderboards, cash prizes, bonus multipliers</li>
+              </ul>
+              <a href="./assets/JEETO.apk" class="btn btn-primary" download>Play Now</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="card game-card">
-            <img src="./assets/TeenPattiNew.jpeg" alt="Teen Patti">
+            <img src="./assets/TeenPattiNew.jpeg" alt="Teen Patti game screenshot" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Teen Patti</h5>
-              <p class="card-text">Play the classic Indian card game and outsmart your opponents!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary">Play Now</a>
+              <p class="card-text">Dive into the classic Indian card game, Teen Patti, where strategy and bluffing lead to victory. Outsmart opponents in this thrilling social game!</p>
+              <ul class="card-text" style="text-align: left; list-style-type: none; padding: 0; margin: 10px 0;">
+                <li><strong>Features:</strong> Private tables, live chat, multiple variants (Joker, AK47)</li>
+                <li><strong>Difficulty:</strong> Medium - strategy-based gameplay</li>
+                <li><strong>Modes:</strong> Multiplayer, Friends Mode, Tournaments</li>
+                <li><strong>Rewards:</strong> Daily chips, tournament prizes, loyalty bonuses</li>
+              </ul>
+              <a href="./assets/JEETO.apk" class="btn btn-primary" download>Play Now</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="card game-card">
-            <img src="./assets/AnderBaharNew.jpeg" alt="Andar Bahar">
+            <img src="./assets/AnderBaharNew.jpeg" alt="Andar Bahar game screenshot" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Andar Bahar</h5>
-              <p class="card-text">Bet and win in this fast-paced Indian card game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary">Play Now</a>
+              <p class="card-text">Enjoy the fast-paced Indian card game Andar Bahar. Bet on whether the next card will appear on Andar or Bahar and win big!</p>
+              <ul class="card-text" style="text-align: left; list-style-type: none; padding: 0; margin: 10px 0;">
+                <li><strong>Features:</strong> Live dealer option, side bets, quick rounds</li>
+                <li><strong>Difficulty:</strong> Easy - luck-based gameplay</li>
+                <li><strong>Modes:</strong> Solo, Live Multiplayer</li>
+                <li><strong>Rewards:</strong> Instant payouts, weekly challenges, bonus bets</li>
+              </ul>
+              <a href="./assets/JEETO.apk" class="btn btn-primary" download>Play Now</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="card game-card">
-            <img src="./assets/funtarget.jpeg" alt="Fun Target">
+            <img src="./assets/funtarget.jpeg" alt="FunTarget game screenshot" loading="lazy">
             <div class="card-body">
-              <h5 class="card-title">Fun Target</h5>
-              <p class="card-text">Mark your numbers and shout FunTarget to claim your prize!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary">Play Now</a>
+              <h5 class="card-title">FunTarget</h5>
+              <p class="card-text">Test your luck and strategy in FunTarget, a dynamic game where you mark numbers to hit big wins. Perfect for casual and competitive players!</p>
+              <ul class="card-text" style="text-align: left; list-style-type: none; padding: 0; margin: 10px 0;">
+                <li><strong>Features:</strong> Customizable cards, quick draw, power-up boosts</li>
+                <li><strong>Difficulty:</strong> Easy to Medium - beginner-friendly</li>
+                <li><strong>Modes:</strong> Solo, Multiplayer, Global Events</li>
+                <li><strong>Rewards:</strong> Daily bonuses, jackpot prizes, event rewards</li>
+              </ul>
+              <a href="./assets/JEETO.apk" class="btn btn-primary" download>Play Now</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="card game-card">
-            <img src="./assets/Pictorial.jpeg" alt="Pictorial">
+            <img src="./assets/Pictorial.jpeg" alt="Pictorial game screenshot" loading="lazy">
             <div class="card-body">
               <h5 class="card-title">Pictorial</h5>
-              <p class="card-text">Experience high-speed action in this exciting game!</p>
-              <a href="./assets/JEETO.apk" class="btn btn-primary">Play Now</a>
+              <p class="card-text">Immerse yourself in Pictorial, a high-speed action game with stunning visuals and intense challenges. Race against time to conquer levels!</p>
+              <ul class="card-text" style="text-align: left; list-style-type: none; padding: 0; margin: 10px 0;">
+                <li><strong>Features:</strong> Dynamic levels, time-based challenges, customizable avatars</li>
+                <li><strong>Difficulty:</strong> Hard - skill-based gameplay</li>
+                <li><strong>Modes:</strong> Solo Campaign, Multiplayer Arena</li>
+                <li><strong>Rewards:</strong> Achievement badges, level-up rewards, leaderboard rankings</li>
+              </ul>
+              <a href="./assets/JEETO.apk" class="btn btn-primary" download>Play Now</a>
             </div>
           </div>
         </div>
@@ -893,21 +1031,21 @@
     <div class="container">
       <h2 class="section-title">Our Services</h2>
       <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="service-card">
             <i class="fas fa-trophy"></i>
             <h5>Tournaments</h5>
             <p>Join daily and weekly tournaments to compete against players worldwide and win exclusive rewards.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="service-card">
             <i class="fas fa-gamepad"></i>
             <h5>Multiplayer Games</h5>
             <p>Enjoy a wide variety of multiplayer games, from puzzles to action-packed battles, with seamless gameplay.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="service-card">
             <i class="fas fa-gift"></i>
             <h5>Rewards & Prizes</h5>
@@ -923,21 +1061,21 @@
     <div class="container">
       <h2 class="section-title">How to Play</h2>
       <div class="row">
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="how-to-play-card">
             <i class="fas fa-user-plus"></i>
             <h5>Step 1: Sign Up</h5>
             <p>Create an account in seconds to start your gaming journey with JEETO.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="how-to-play-card">
             <i class="fas fa-gamepad"></i>
             <h5>Step 2: Choose a Game</h5>
             <p>Browse our exciting collection of games and pick your favorite.</p>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 col-sm-6 col-12 mb-4">
           <div class="how-to-play-card">
             <i class="fas fa-play"></i>
             <h5>Step 3: Play & Win</h5>
@@ -950,7 +1088,7 @@
 
   <!-- Install Section -->
   <section id="install" class="install-section">
-    <video class="install-video" autoplay muted loop>
+    <video class="install-video" autoplay muted loop playsinline poster="./assets/install-poster.jpg" loading="lazy">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-gaming-lights-on-a-dark-background-27927-large.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -958,21 +1096,22 @@
     <div class="container install-content">
       <h1 class="title">How to Install JEETO</h1>
       <div class="install-steps">
-        <div class="install-step">
+        <div class="install-step" role="article">
           <h4>Step 1: Visit JEETO Website</h4>
           <p>Navigate to <a href="https://www.jeeto.com" style="color: #00d4ff; text-decoration: underline;">www.jeeto.com</a> using your mobile browser to access the official JEETO platform.</p>
         </div>
-        <div class="install-step">
+        <div class="install-step" role="article">
           <h4>Step 2: Download the App</h4>
           <p>Select your platform (Android or iOS) and click the download link to get the JEETO app installer.</p>
         </div>
-        <div class="install-step">
+        <div class="install-step" role="article">
           <h4>Step 3: Install the App</h4>
           <p>Follow the on-screen instructions to install the app, then launch JEETO to start gaming.</p>
         </div>
       </div>
       <div class="platform-links">
         <a href="./assets/JEETO.apk" class="btn btn-primary" download>Download for Android</a>
+        <!-- <a href="https://www.jeeto.com/ios" class="btn btn-primary">Download for iOS</a> -->
       </div>
     </div>
   </section>
@@ -992,14 +1131,14 @@
       <p>Get in touch with our dedicated support team for assistance or inquiries.</p>
       <div class="contact-info" style="text-align: center; padding: 40px; background: linear-gradient(135deg, #25254b, #1a1a2e); border-radius: 15px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);">
         <h4>Contact Information</h4>
-        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:support@jeeto.com">support@jeeto.com</a></p>
-        <p><i class="fas fa-phone"></i> Phone: <a href="tel:+911234567890">+91 123 456 7890</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Gaming Lane, Tech City, India</p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:support@jeeto.com">support@jeeto.com</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> Phone: <a href="tel:+911234567890">+91 123 456 7890</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Address: 123 Gaming Lane, Tech City, India</p>
         <div class="social-icons mt-3">
-          <a href="https://facebook.com/jeeto"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/jeeto"><i class="fab fa-twitter"></i></a>
-          <a href="https://instagram.com/jeeto"><i class="fab fa-instagram"></i></a>
-          <a href="https://youtube.com/jeeto"><i class="fab fa-youtube"></i></a>
+          <a href="https://facebook.com/jeeto" aria-label="Follow JEETO on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/jeeto" aria-label="Follow JEETO on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/jeeto" aria-label="Follow JEETO on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/jeeto" aria-label="Follow JEETO on YouTube"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
     </div>
@@ -1020,12 +1159,12 @@
         <a href="#install">Install</a>
       </div>
       <div class="social-icons mt-4">
-        <a href="https://facebook.com/jeeto"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/jeeto"><i class="fab fa-twitter"></i></a>
-        <a href="https://instagram.com/jeeto"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/jeeto"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebook.com/jeeto" aria-label="Follow JEETO on Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/jeeto" aria-label="Follow JEETO on Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/jeeto" aria-label="Follow JEETO on Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/jeeto" aria-label="Follow JEETO on YouTube"><i class="fab fa-youtube"></i></a>
       </div>
-      <p class="copyright mt-4">© 2025 JEETO. All Rights Reserved.</p>
+      <p class="copyright mt-4">© <span id="currentYear"></span> JEETO. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -1033,16 +1172,66 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Custom JS -->
   <script>
-    // Show popup on page load
-    window.addEventListener('load', function () {
+    // Set dynamic copyright year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Function to close popup with animation
+    function closePopup() {
       const popupOverlay = document.getElementById('popupOverlay');
-      popupOverlay.style.display = 'flex';
+      const popupCard = document.querySelector('.popup-card');
+      popupOverlay.classList.add('fade-out');
+      popupCard.classList.add('fade-out');
+      setTimeout(() => {
+        popupOverlay.style.display = 'none';
+        popupOverlay.classList.remove('fade-out');
+        popupCard.classList.remove('fade-out');
+      }, 300); // Match animation duration
+    }
+
+    // Check for reset query parameter to clear localStorage for testing
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('resetPopup') === 'true') {
+      localStorage.removeItem('popupShown');
+      console.log('Popup reset: localStorage cleared');
+    }
+
+    // Show popup on page load with delay
+    window.addEventListener('load', function () {
+      try {
+        if (!localStorage.getItem('popupShown')) {
+          console.log('Showing popup: popupShown not set in localStorage');
+          setTimeout(() => {
+            const popupOverlay = document.getElementById('popupOverlay');
+            if (popupOverlay) {
+              popupOverlay.style.display = 'flex';
+              localStorage.setItem('popupShown', 'true');
+            } else {
+              console.error('Popup overlay element not found');
+            }
+          }, 2000);
+        } else {
+          console.log('Popup skipped: popupShown already set in localStorage');
+        }
+      } catch (error) {
+        console.error('Error in popup logic:', error);
+      }
     });
 
     // Close popup on clicking close button
-    document.getElementById('closePopup').addEventListener('click', function () {
-      const popupOverlay = document.getElementById('popupOverlay');
-      popupOverlay.style.display = 'none';
+    document.getElementById('closePopup').addEventListener('click', closePopup);
+
+    // Close popup on clicking overlay (outside card)
+    document.getElementById('popupOverlay').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closePopup();
+      }
+    });
+
+    // Close popup on pressing Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closePopup();
+      }
     });
 
     // Smooth scrolling for navigation links
@@ -1061,16 +1250,6 @@
           bsCollapse.hide();
         }
       });
-    });
-
-    // Parallax effect for hero and install sections
-    window.addEventListener('scroll', function () {
-      const hero = document.querySelector('.hero-section');
-      const install = document.querySelector('.install-section');
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * 0.5;
-      if (hero) hero.style.backgroundPositionY = `${rate}px`;
-      if (install) install.style.backgroundPositionY = `${rate}px`;
     });
   </script>
 </body>
